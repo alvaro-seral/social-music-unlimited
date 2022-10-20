@@ -37,6 +37,22 @@
          UserDatabaseRealm to authenticate users
     -->
     <Resource auth="Container" description="User database that can be updated and saved" factory="org.apache.catalina.users.MemoryUserDatabaseFactory" name="UserDatabase" pathname="conf/tomcat-users.xml" type="org.apache.catalina.UserDatabase"/>
+	
+	<!-- Resource auth="Container" driverClassName="corg.postgresql.Driver " maxActive="100" maxIdle="20" maxWait="10000" minIdle="5" name="jdbc/SIDB" password="sisinf2020" type="javax.sql.DataSource" url="jdbc:postgresql://localhost:5432/postgres?currentSchema=prj1" username="postgres"/ -->	  
+	
+ 	<Resource name="jdbc/SIDB"
+	 	auth="Container"
+		 type="javax.sql.DataSource"
+		 driverClassName="corg.postgresql.Driver "
+		 url="jdbc:postgresql://localhost:5432/postgres?currentSchema=prj1"
+		 username="usuario"
+		 password="sisinf2022"
+		
+		 maxActive="100"
+		 maxIdle="20"
+		 minIdle="5"
+		 maxWait="10000" />
+	  
   </GlobalNamingResources>
 
   <!-- A "Service" is a collection of one or more "Connectors" that share
@@ -153,7 +169,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      </Host>
+      <Context docBase="SM_webapp" path="/SM_webapp" reloadable="true" source="org.eclipse.jst.jee.server:SM_webapp"/></Host>
     </Engine>
   </Service>
 </Server>

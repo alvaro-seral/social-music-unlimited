@@ -26,4 +26,10 @@
     <!--
     <Manager pathname="" />
     -->
+    
+	<ResourceLink name="jdbc/socmuDB"
+ 		global="jdbc/SMDB"
+ 		auth="Container"
+ 		type="javax.sql.DataSource" />
+    
 </Context>
