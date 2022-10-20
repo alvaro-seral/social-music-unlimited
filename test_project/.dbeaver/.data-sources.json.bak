@@ -1,0 +1,50 @@
+{
+	"folders": {},
+	"connections": {
+		"postgres-jdbc-183e70d84be-4619a7d319c9789": {
+			"provider": "postgresql",
+			"driver": "postgres-jdbc",
+			"name": "postgres",
+			"save-password": true,
+			"show-system-objects": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "5432",
+				"database": "postgres",
+				"url": "jdbc:postgresql://localhost:5432/postgres",
+				"type": "dev",
+				"provider-properties": {
+					"@dbeaver-show-non-default-db@": "false",
+					"@dbeaver-show-template-db@": "false",
+					"postgresql.dd.plain.string": "false",
+					"postgresql.dd.tag.string": "false"
+				},
+				"auth-model": "native"
+			}
+		}
+	},
+	"virtual-models": {
+		"postgres-jdbc-183e70d84be-4619a7d319c9789": {
+			"postgres": {
+				"sisinf_p2": {
+					"@properties": {
+						"erd.diagram.state": {
+							"serialized": "<diagram version=\"1\" name=\"sisinf_p2\" time=\"202210172034\"><entities><data-source id=\"postgres-jdbc-183e70d84be-4619a7d319c9789\"><entity id=\"1\" name=\"comentarios_event\" fq-name=\"sisinf_p2.comentarios_event\" order=\"0\" x=\"0\" y=\"0\"><path name=\"sisinf_p2\"/><path name=\"postgres\"/></entity><entity id=\"2\" name=\"comentarios_publi\" fq-name=\"sisinf_p2.comentarios_publi\" order=\"8\" x=\"19\" y=\"447\"><path name=\"sisinf_p2\"/><path name=\"postgres\"/></entity><entity id=\"3\" name=\"eventos\" fq-name=\"sisinf_p2.eventos\" order=\"1\" x=\"16\" y=\"163\"><path name=\"sisinf_p2\"/><path name=\"postgres\"/></entity><entity id=\"4\" name=\"grupos\" fq-name=\"sisinf_p2.grupos\" order=\"2\" x=\"498\" y=\"487\"><path name=\"sisinf_p2\"/><path name=\"postgres\"/></entity><entity id=\"5\" name=\"publicaciones\" fq-name=\"sisinf_p2.publicaciones\" order=\"3\" x=\"235\" y=\"455\"><path name=\"sisinf_p2\"/><path name=\"postgres\"/></entity><entity id=\"6\" name=\"quejas\" fq-name=\"sisinf_p2.quejas\" order=\"4\" x=\"969\" y=\"160\"><path name=\"sisinf_p2\"/><path name=\"postgres\"/></entity><entity id=\"7\" name=\"solicitudes\" fq-name=\"sisinf_p2.solicitudes\" order=\"5\" x=\"945\" y=\"29\"><path name=\"sisinf_p2\"/><path name=\"postgres\"/></entity><entity id=\"8\" name=\"usuarios\" fq-name=\"sisinf_p2.usuarios\" order=\"6\" x=\"536\" y=\"60\"><path name=\"sisinf_p2\"/><path name=\"postgres\"/></entity><entity id=\"9\" name=\"grupos_user\" fq-name=\"sisinf_p2.grupos_user\" order=\"7\" x=\"535\" y=\"279\"><path name=\"sisinf_p2\"/><path name=\"postgres\"/></entity></data-source></entities><relations><relation name=\"publicaciones_fk_2\" fq-name=\"sisinf_p2.publicaciones.publicaciones_fk_2\" type=\"fk\" pk-ref=\"4\" fk-ref=\"5\"/><relation name=\"grupos_user_fk\" fq-name=\"sisinf_p2.grupos_user.grupos_user_fk\" type=\"fk\" pk-ref=\"4\" fk-ref=\"9\"/><relation name=\"comentarios_publi_fk_2\" fq-name=\"sisinf_p2.comentarios_publi.comentarios_publi_fk_2\" type=\"fk\" pk-ref=\"5\" fk-ref=\"2\"/><relation name=\"comentarios_event_fk\" fq-name=\"sisinf_p2.comentarios_event.comentarios_event_fk\" type=\"fk\" pk-ref=\"8\" fk-ref=\"1\"/><relation name=\"comentarios_publi_fk\" fq-name=\"sisinf_p2.comentarios_publi.comentarios_publi_fk\" type=\"fk\" pk-ref=\"8\" fk-ref=\"2\"/><relation name=\"publicaciones_fk\" fq-name=\"sisinf_p2.publicaciones.publicaciones_fk\" type=\"fk\" pk-ref=\"8\" fk-ref=\"5\"/><relation name=\"quejas_fk\" fq-name=\"sisinf_p2.quejas.quejas_fk\" type=\"fk\" pk-ref=\"8\" fk-ref=\"6\"/><relation name=\"solicitudes_fk\" fq-name=\"sisinf_p2.solicitudes.solicitudes_fk\" type=\"fk\" pk-ref=\"8\" fk-ref=\"7\"/><relation name=\"grupos_user_fk_1\" fq-name=\"sisinf_p2.grupos_user.grupos_user_fk_1\" type=\"fk\" pk-ref=\"8\" fk-ref=\"9\"/></relations></diagram>"
+						}
+					}
+				}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false
+		}
+	}
+}
