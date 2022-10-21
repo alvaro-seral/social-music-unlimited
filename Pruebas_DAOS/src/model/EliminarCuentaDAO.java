@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import db.PoolConnectionManager;
 
-public class EliminarCuenta {
+public class EliminarCuentaDAO {
 	
 	/**/
 	private static String borrarUsuario = "DELETE FROM usuarios WHERE nombre=?";

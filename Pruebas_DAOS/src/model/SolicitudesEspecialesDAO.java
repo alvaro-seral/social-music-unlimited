@@ -74,7 +74,7 @@ public class SolicitudesEspecialesDAO {
 	}
 
 	/**/
-	public static boolean darPrivilegios(UsuariosVO usuario_) {
+	public static void darPrivilegios(UsuariosVO usuario_) {
 
 		boolean retVal = false;
 		Connection conn = null;
@@ -83,14 +83,18 @@ public class SolicitudesEspecialesDAO {
 			// Abrimos la conexión e inicializamos los parámetros 
             conn = PoolConnectionManager.getConnection();
 			PreparedStatement ascUA = conn.prepareStatement(ascenderTipo);
+			PreparedStatement borrarSA = conn.prepareStatement(borrarSolicitud);
 			ascUA.setString(1, usuario_.getNombre());
+			borrarSA.setString(1, usuario_.getNombre());
 
             
             // Ejecutamos la consulta
             ascUA.execute();
+            borrarSA.execute();
             
             // Liberamos los recursos utilizados
 			ascUA.close();
+			borrarSA.close();
             
 		} catch(SQLException se) {
 			se.printStackTrace();  
@@ -100,8 +104,6 @@ public class SolicitudesEspecialesDAO {
 		} finally {
 			PoolConnectionManager.releaseConnection(conn); 
 		}
-		
-		return retVal;
 
 	}
 
