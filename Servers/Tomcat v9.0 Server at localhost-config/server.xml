@@ -40,18 +40,7 @@
 	
 	<!-- Resource auth="Container" driverClassName="corg.postgresql.Driver " maxActive="100" maxIdle="20" maxWait="10000" minIdle="5" name="jdbc/SIDB" password="sisinf2020" type="javax.sql.DataSource" url="jdbc:postgresql://localhost:5432/postgres?currentSchema=prj1" username="postgres"/ -->	  
 	
- 	<Resource name="jdbc/SIDB"
-	 	auth="Container"
-		 type="javax.sql.DataSource"
-		 driverClassName="corg.postgresql.Driver "
-		 url="jdbc:postgresql://localhost:5432/postgres?currentSchema=prj1"
-		 username="usuario"
-		 password="sisinf2022"
-		
-		 maxActive="100"
-		 maxIdle="20"
-		 minIdle="5"
-		 maxWait="10000" />
+ 	<Resource auth="Container" driverClassName="corg.postgresql.Driver " maxActive="100" maxIdle="20" maxWait="10000" minIdle="5" name="jdbc/SIDB" password="sisinf2022" type="javax.sql.DataSource" url="jdbc:postgresql://localhost:5432/postgres?currentSchema=prj1" username="usuario"/>
 	  
   </GlobalNamingResources>
 
