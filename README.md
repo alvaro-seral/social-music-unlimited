@@ -28,37 +28,37 @@
 
 ### Objetivos
 
-Esunhechoquelasprobabilidadesdecongeniarconpersonasquecompartangustosmusicales
-similaresesmásaltaquecuandodichosgustossondisparejos.Anteestedato,sehaplanteado
-desarrollarunaaplicaciónwebquecubralanecesidadderelacionarseconaquellasotraspersonas
-quecompartandeterminadosgénerosmusicales.Paraayudarenelproceso,enlaredsociala
-desarrollarsepublicaránlospróximoseventosdeacuerdoalgénero,permitiendoquenuevos
+Es un hecho que las probabilidades de congeniar con personas que compartan gustos musicales
+similares es más alta que cuando dichos gustos son disparejos. Ante este dato, se ha planteado
+desarrollar una aplicación web que cubra la necesidad de relacionarse con aquellas otras personas
+que compartan determinados géneros musicales. Para ayudar en el proceso, en la red social a
+desarrollar se publicarán los próximos eventos de acuerdo al género, permitiendo que nuevos
 grupos de personas se junten y se conozcan en la vida real.
 
-Así,ademásdetener lacapacidadderealizar publicaciones,seofreceráalusuariocomúnlos
-mensajespublicadosporotrascuentas,aligualqueloseventosquevanaocurrirenlaspróximas
+Así, además de tener la capacidad de realizar publicaciones, se ofrecerá al usuario común los
+mensajes publicados por otras cuentas, al igual que los eventos que van a ocurrir en las próximas
 fechas con el número de personas totales que han indicado que iban a participar.
 
-Laaplicaciónwebestaráorganizadaendistintosgrupossociales,cadaunodedicadoaungénero
-musicalespecífico.Deestemodo,elusuariopodráseleccionarencualquiermomentolosgéneros
-musicalesdondedeseaparticipar,aligualqueelegirelgrupodeentrelosqueperteneceapartir
+La aplicación web estará organizada en distintos grupos sociales, cada uno dedicado a un género
+musical específico. De este modo, el usuario podrá seleccionar en cualquier momento los géneros
+musicales donde desea participar, al igual que elegir el grupo de entre los que pertenece a partir
 del cual visualizará publicaciones y eventos relacionados.
 
-Lainformaciónquesevaobtenerdelaaplicaciónwebresultarádelainteraccióndelosusuarios
-conlapropiaredsocial,comopuedenserlaspublicacionesoeventosrealizadosatravésdeesta
+La información que se va obtener de la aplicación web resultará de la interacción de los usuarios
+con la propia red social, como pueden ser las publicaciones o eventos realizados a través de esta
 en los grupos concretos.
 
-Partededicha informaciónrecogidaserágestionadaenformadedatosestadísticosparasu
-posteriorestudioporunadministrador.Entrelosdatosquepuedenobtenerlosadministradores
-sepuedendestacarelnúmerodeparticipantesdecadagrupo,eldeusuariosregistrados,oelde
+Parte de dicha información recogida será gestionada en forma de datos estadísticos para su
+posterior estudio por un administrador. Entre los datos que pueden obtener los administradores
+se pueden destacar el número de participantes de cada grupo, el de usuarios registrados, o el de
 apuntados por cada evento.
 
-Elpúblicoobjetivoalquevadirigidalaaplicaciónwebsonprincipalmentejóvenesdeentre 15 y 35
-años,loscualesdisfrutanmásdelasactividadescomoconciertosyotroseventosmusicales,al
-igualquetienenuncontrolmayordelasredessocialesengeneral.Sinembargo,laaplicaciónno
+El público objetivo al que va dirigida la aplicación web son principalmente jóvenes de entre 15 y 35
+años, los cuales disfrutan más de las actividades como conciertos y otros eventos musicales, al
+igual que tienen un control mayor de las redes sociales en general. Sin embargo, la aplicación no
 discrimina siempre que se tengan unos conocimientos mínimos sobre el uso de estas mismas.
 
-Atravésdetodoestosehadesarrolladounprototipoderedsocialfuncionalquegestionalos
+A través de todo esto se ha desarrollado un prototipo de red social funcional que gestiona los
 datos a través de un sistema de información completo.
 
 
