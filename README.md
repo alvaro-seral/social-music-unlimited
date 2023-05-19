@@ -1,4 +1,4 @@
-![Social Music Unlimited](WebContent/logo.png)
+![Social Music Unlimited](readme_images/logo.png)
 
 # Desarrollo y construcción de una aplicación web que cumpla los requisitos de un sistema de información
 
@@ -7,21 +7,14 @@
 - Objetivo y alcance funcional de la aplicación.
    - Objetivos
    - Perfiles de usuario
-   - Entidades de información
    - Funcionalidades del sistema
-- Planteamiento del sistema y storyboard de la aplicación.
-   - Modelo de negocio
-   - Storyboard / Mapa de navegación
 - Modelo de datos del sistema.
    - Modelo Entidad-Relación
    - Modelo Relacional
    - Diseño de las clases implementadas en la capa de persistencia de datos
-- Diferencias con la primera versión planteada.
 - Puesta en marcha del sistema de información.
    - Procedimiento para el despliegue e instalación de la aplicación
    - Cuestiones necesarias para el uso de la aplicación
-- Cronograma con tiempos de dedicación al sistema y valoración grupal
-- Bibliografía.
 
 ## Objetivo y alcance funcional de la aplicación.
 
@@ -86,182 +79,114 @@ Tienen a su disposición todos los datos estadísticos obtenidos de la lectura d
 
 ### Modelo Entidad-Relación
 
-EldiseñodelmodeloEntidad-Relaciónutilizadoenlabasededatosrequeridaparaalmacenarlos
-datos de la aplicación web es el siguiente.
+El diseño del modelo Entidad-Relación utilizado en la base de datos requerida para almacenar los datos de la aplicación web es el siguiente.
+![](readme_images/1.png)
 
 Además, se deben tener en cuenta las siguientes restricciones:
-
-- SololosUsuariosdetipoNormalpuedenenviarSolicitudesparaconvertirseenUsuarios
-    detipo Especial, ysolo losUsuariosdetipo Administrador puedengestionardichas
-    Solicitudes.
-- SololosUsuariosdetipoNormaloEspecialpuedenescribirQuejas,ysololosUsuariosde
-    tipo Administrador pueden gestionar dichas Quejas.
+- Solo los Usuarios de tipo Normal pueden enviar Solicitudes para convertirse en Usuarios de tipo Especial, y solo los Usuarios de tipo Administrador pueden gestionar dichas Solicitudes.
+- Solo los Usuarios de tipo Normal o Especial pueden escribir Quejas, y solo los Usuarios de tipo Administrador pueden gestionar dichas Quejas.
 - Solo los Usuarios de tipo Especial o Administrador pueden realizar Eventos.
-- Solo losUsuariosdetipoNormalo Especialpueden publicarPublicacionesoañadir
-    Comentarios tanto de Publicaciones como de Eventos.
+- Solo los Usuarios de tipo Normal o Especial pueden publicar Publicaciones o añadir Comentarios tanto de Publicaciones como de Eventos.
 - Solo los Usuarios de tipo Normal o Especial pueden apuntarse a Eventos.
-- El número de personas apuntadas (Num_apuntados) a un Evento nunca puede ser < 0.
-
-El número de participantes de un grupo (Num_participantes) nunca puede ser < 0.
-
+- El número de personas apuntadas (Num_apuntados) a un Evento nunca puede ser < 0 .
+- El número de participantes de un grupo (Num_participantes) nunca puede ser < 0 .
 
 ### Modelo Relacional
 
-A partir del modelo Entidad-Relación planteado seha desarrollado el siguiente esquema
-relacional.LastablasGrupos_UsuariosyApuntadossonelresultadodeevaluarlasrelacionesN:M
-del esquema E-R anterior.
-
+A partir del modelo Entidad-Relación planteado se ha desarrollado el siguiente esquema relacional. Las tablas Grupos_Usuarios y Apuntados son el resultado de evaluar las relaciones N:M del esquema E-R anterior.
 ```
 Usuarios (
-Nombre: cadena;
-Correo : cadena, único, no nulo;
-Contrasenya : cadena, no nulo;
-Tipo : cadena(“Normal”, “Especial”, “Administrador”), no nulo );
-```
-```
+   Nombre: cadena;
+   Correo : cadena, único, no nulo;
+   Contrasenya : cadena, no nulo;
+   Tipo : cadena(“Normal”, “Especial”, “Administrador”), no nulo );
+   
 Grupos (
-Nombre: cadena;
-Num_Participantes : natural, no nulo );
-```
-```
+   Nombre: cadena;
+   Num_Participantes : natural, no nulo );
+   
 Publicaciones (
-id: entero con auto-incremento ;
-Nombre : cadena, no nulo, clave ajena de Usuarios ;
-Descripcion : cadena, no nulo;
-Grupo : cadena, no nulo, clave ajena de Grupos );
-```
-```
+   id: entero con auto-incremento ;
+   Nombre : cadena, no nulo, clave ajena de Usuarios ;
+   Descripcion : cadena, no nulo;
+   Grupo : cadena, no nulo, clave ajena de Grupos );
+   
 Eventos (
-id: entero;
-Empresa : cadena, no nulo;
-Fecha_Evento : fecha, no nulo;
-Lugar : cadena, no nulo;
-Descripcion : cadena, no nulo;
-Num_Apuntados : natural, no nulo;
-Grupo : cadena, no nulo, clave ajena de Grupos ;
-Nombre : cadena, no nulo, clave ajena de Usuarios );
-```
-```
+   id: entero;
+   Empresa : cadena, no nulo;
+   Fecha_Evento : fecha, no nulo;
+   Lugar : cadena, no nulo;
+   Descripcion : cadena, no nulo;
+   Num_Apuntados : natural, no nulo;
+   Grupo : cadena, no nulo, clave ajena de Grupos ;
+   Nombre : cadena, no nulo, clave ajena de Usuarios );
+   
 Comentarios_Publi (
-id: entero;
-Nombre : cadena, no nulo, clave ajena de Usuarios ;
-Descripcion : cadena, no nulo;
-Publicacion : entero, no nulo, clave ajena de Publicaciones );
-```
-```
+   id: entero;
+   Nombre : cadena, no nulo, clave ajena de Usuarios ;
+   Descripcion : cadena, no nulo;
+   Publicacion : entero, no nulo, clave ajena de Publicaciones );
+   
 Comentarios_Event (
-id: entero;
-Nombre : cadena, no nulo, clave ajena de Usuarios ;
-Descripcion : cadena, no nulo;
-Evento : entero, no nulo, clave ajena de Eventos );
-```
-```
+   id: entero;
+   Nombre : cadena, no nulo, clave ajena de Usuarios ;
+   Descripcion : cadena, no nulo;
+   Evento : entero, no nulo, clave ajena de Eventos );
+   
 Quejas (
-id: entero;
-Nombre : cadena, no nulo, clave ajena de Usuarios ;
-Descripcion : cadena, no nulo );
-```
-```
+   id: entero;
+   Nombre : cadena, no nulo, clave ajena de Usuarios ;
+   Descripcion : cadena, no nulo );
+   
 Solicitudes (
-Nombre: cadena, clave ajena de Usuarios );
-```
-```
+   Nombre: cadena, clave ajena de Usuarios );
+   
 Grupos_Usuarios (
-Usuario: cadena, clave ajena de Usuarios ;
-Grupo: cadena, clave ajena de Grupos );
-```
-```
+   Usuario: cadena, clave ajena de Usuarios ;
+   Grupo: cadena, clave ajena de Grupos );
+   
 Apuntados (
-Usuario: cadena, clave ajena de Usuarios ;
-Evento: cadena, clave ajena de Eventos );
+   Usuario: cadena, clave ajena de Usuarios ;
+   Evento: cadena, clave ajena de Eventos );
 ```
 
-Para observar una ideamásvisualdel modelo Relacionalsepresenta un esquema conlos
-atributosdelastablas,destacandolasclavesprimariasylasrelacionesdeclavesajenasentrelas
-distintas tablas.
-
+Para observar una idea más visual del modelo Relacional se presenta un esquema con los atributos de las tablas, destacando las claves primarias y las relaciones de claves ajenas entre las distintas tablas.
+![](readme_images/3.png)
 
 ### Diseño de las clases implementadas en la capa de persistencia de datos
 
-Los _“DAO”_ quecomponenlacapadepersistenciadedatospermitenabstraeryencapsularla
-comunicaciónconlabasededatos,demaneraquelacapadelógicadelaaplicaciónnonecesita
-enningúnmomentoconocercómoestáimplementadalabasepordentro(tablas)niacuálse
-conecta.
+Los “DAO” que componen la capa de persistencia de datos permiten abstraer y encapsular la comunicación con la base de datos, de manera que la capa de lógica de la aplicación no necesita en ningún momento conocer cómo está implementada la base por dentro (tablas) ni a cuál se conecta.
 
-Siguiendodichomodelo,sehadecididodistribuirlos _“DAO”_ paracadaunadelasfuncionalidades
-quenuestrosistemapuedellegaraofrecer,detalformaquelosdesarrolladoresqueimplementan
-lapartelógicade la aplicaciónsepanintuitivamentedondehandehacer lasllamadasalos
-métodos de los propios _“DAO”_ para obtener la informaciónque deseen de las distintas entidades.
+Siguiendo dicho modelo, se ha decidido distribuir los “DAO” para cada una de las funcionalidades que nuestro sistema puede llegar a ofrecer, de tal forma que los desarrolladores que implementan la parte lógica de la aplicación sepan intuitivamente donde han de hacer las llamadas a los métodos de los propios “DAO” para obtener la información que deseen de las distintas entidades.
 
-Unejemplodefuncionalidadseríaelsistemade _“Quejas”_ ,dondelosadministradorespueden
-consultartodaslasquejaspresentadasporlosdistintosusuariosconelmétodo _“obtenerQuejas(...)”_ ,
-los usuarios pueden enviar dichas quejas mediante _“presentarQueja(...)”_ , etc.
+Un ejemplo de funcionalidad sería el sistema de “Quejas”, donde los administradores pueden consultar todas las quejas presentadas por los distintos usuarios con el método “obtenerQuejas(...)”, los usuarios pueden enviar dichas quejas mediante “presentarQueja(...)”, etc.
 
-
-## Diferencias con la primera versión planteada.
-
-Alcompararlasversionesinicialesdelproyectoconelsistemadeinformaciónfinal,sepueden
-encontrar algunas diferencias que valen la pena mencionar.
-
-Enprimerlugar,esapreciableelaumentoenlacantidaddefuncionalidadesquesepresentan,
-ademásdecadaunasermásespecífica.Estosedebealaexistenciadeunavisiónmásdetalladay
-ajustadadelfuncionamientodelsistemaydelaaplicaciónweb.Sinembargo,alahoradeanalizar
-labasedelasmismas,seobservaqueambasdisponendelasmismasoperacionesdisponibles
-para realizar, aunque en esta última versión se encuentren mejor estructuradas.
-
-Además,alestudiarambosstoryboards,tantoelprimerorealizadocomoelrelativoalaversión
-definitiva, hay pequeñas disparidades de las que es importante destacar tres.
-Laprimeraconsisteenlaeliminacióndelaopciónparaconfirmarlacontraseñaalsolicitarun
-usuarionormallaconversióndecuentaaunaconpermisosespeciales.Estamodificaciónsellevó
-acabodebidoaquelaoperaciónnoesuncambiodirectoalacuenta,sinoquedependedeun
-tercero,enestecasounadministrador,queteconcedalospermisossolicitados,yestenodebería
-entregarlosamenosqueseanrequeridosporunaempresaorganizadoradeeventosounautoro
-banda del género.
-Elsegundotratadeincorporarcomomedidadeseguridadlaaccióndeconfirmarcontraseñaal
-eliminarlacuentayaque,alcontrarioqueantes,estaoperaciónsiproduceunamodificación
-directa a la cuenta, y en este caso, permanente.
-Elúltimoradicaenañadiruncampoderepetircontraseñaduranteelregistro,demodoquese
-eviten fallos del usuario al escribir la nueva contraseña incorrectamente.
-
+![](readme_images/2.png)
 
 ## Puesta en marcha del sistema de información.
 
 ### Procedimiento para el despliegue e instalación de la aplicación
 
-Elúnicorequisitoprevioaldesplieguedelaaplicaciónestenerinstaladodockerenelequipoen
-cuestión.Noesnecesarioinstalarnadamásdebidoaquedocker,alvirtualizarlaaplicaciónconsus
-dependenciasrequeridas,evitacontratiemposcomolibreríasfaltantes,conflictosdeversioneso
-ficherosdeconfiguraciónproblemáticos.Paraello,encasodequenosetengainstalado,se
-deberían ejecutar los siguientes comandos en la terminal del equipo ubuntu o semejante:
-
+El único requisito previo al despliegue de la aplicación es tener instalado docker en el equipo en cuestión. No es necesario instalar nada más debido a que docker, al virtualizar la aplicación con sus dependencias requeridas, evita contratiempos como librerías faltantes, conflictos de versiones o ficheros de configuración problemáticos. Para ello, en caso de que no se tenga instalado, se deberían ejecutar los siguientes comandos en la terminal del equipo ubuntu o semejante:
 ```
 > sudo apt install docker
 > sudo apt install docker.io
 ```
-Unavezpreparadoelequipo,sedeberádescomprimirelarchivo.zipquecontienelosarchivos
-necesariosparaeldespliegueeinstalacióndelaaplicación.Endichopaquetedearchivosse
-encuentraelproyectoconelcódigofuentedelaredsocialdesarrollada,unaimagenquecontiene
-la aplicación junto con el servidor Tomcat, y otra que abarca la base de datos de postgresql.
 
-Finalmenteparadesplegarlaaplicaciónwebbastaconejecutarelscriptbashqueseencuentra
-dentrodelacarpeta“ _Docker”_ .Mediantedichoficherosemontanloscontenedoresrelativosal
-servidorTomcatyalabasededatos,ademásdecrearunNATdelpuerto 8080 denuestrohostal
-puerto 8080 deloscontenedores,deformaquesepuedaabrirlaaplicaciónwebatravésdelaurl
-_[http://localhost:](http://localhost:) 8080_.
+Una vez preparado el equipo, se deberá descomprimir el archivo .zip que contiene los archivos necesarios para el despliegue e instalación de la aplicación. En dicho paquete de archivos se encuentra el proyecto con el código fuente de la red social desarrollada, una imagen que contiene la aplicación junto con el servidor Tomcat, y otra que abarca la base de datos de postgresql.
 
+Finalmente para desplegar la aplicación web basta con ejecutar el script bash que se encuentra dentro de la carpeta “Docker”. Mediante dicho fichero se montan los contenedores relativos al servidor Tomcat y a la base de datos, además de crear un NAT del puerto 8080 de nuestro host al puerto 8080 de los contenedores, de forma que se pueda abrir la aplicación web a través de la url http://localhost:8080.
 ```
 > sudo ./Montar_Contenedores.sh
 ```
+
 Adicionalmente, se puede ejecutar,
-
 - si se desea detener los contenedores tanto del servidor Tomcat como de la base de datos:
-
 ```
 > sudo docker stop sisinf-tomcat
 > sudo docker stop sisinf-database
 ```
 - si se desea eliminar los contenedores tanto del servidor Tomcat como de la base de datos:
-
 ```
 > sudo docker rm sisinf-tomcat
 > sudo docker rm sisinf-database
@@ -269,80 +194,12 @@ Adicionalmente, se puede ejecutar,
 
 ### Cuestiones necesarias para el uso de la aplicación
 
-Alahoradeempezarautilizarlaaplicaciónwebesprecisodestacarlaexistenciadelosgrupos
-musicales por defecto, de modo que se pueda probar con una experiencia global el
-funcionamiento del conjunto de todas las operaciones.
+A la hora de empezar a utilizar la aplicación web es preciso destacar la existencia de los grupos musicales por defecto, de modo que se pueda probar con una experiencia global el funcionamiento del conjunto de todas las operaciones.
 
-Alahoradeiniciarsesión,bastaconintroducirlascredencialesúnicasdelacuentaenlapáginade
-inicio, demodoque,dependiendodeltipodecuentaqueseposea(usuarionormal,usuario
-especial o administrador), se redirija a distintas páginas específicas.
+A la hora de iniciar sesión, basta con introducir las credenciales únicas de la cuenta en la página de inicio, de modo que, dependiendo del tipo de cuenta que se posea (usuario normal, usuario especial o administrador), se redirija a distintas páginas específicas.
 
-Comoenlaaplicaciónbasenoexisteningúnusuarionormal,esnecesarioregistrarseprimero
-antesdepoderiniciarsesióncomounusuariodeestetipo.Además,alnohabertampocousuarios
-especiales,sisedeseatenerunacuentadeestetiposedeberásolicitaraladministrador(enel
-menú desplegable de la derecha, botón _“Solicitar cuenta especial”_ ), y esteúltimo deberá
-concederle permisos por medio de la página dedicada _“Gestionar solicitudes”_.
+Como en la aplicación base no existe ningún usuario normal, es necesario registrarse primero antes de poder iniciar sesión como un usuario de este tipo. Además, al no haber tampoco usuarios especiales, si se desea tener una cuenta de este tipo se deberá solicitar al administrador (en el menú desplegable de la derecha, botón “Solicitar cuenta especial”), y este último deberá concederle permisos por medio de la página dedicada “Gestionar solicitudes”.
 
-Conelfindequesepuedanprobarlasaccionesexclusivasdeladministrador,sefacilitanunas
-credenciales de una cuenta administrativa:
-Nombre de usuario: admin
-Contraseña: admin
-
-
-## Cronograma con tiempos de dedicación al sistema y valoración grupal
-
-Durantelaevaluacióndelproyectoentretodoslosmiembrosdelgrupo,lasconclusionesalasque
-sehanllegadosonunánimes.Estetrabajo,aunquelargo,haresultadoparticularmenteútilala
-horadecomprenderdeformavisualelfuncionamientointernodeunsistemadeinformacióny
-comooperanentresílasdistintascapasexistentes(control,persistencia,etc).Atravésdeél
-hemosreforzadolosconocimientosrelativosalaestructuradelosservletsydelosDAOs,aligual
-quehemosaprendidonuevosmétodosdediseñodepáginaswebatravésdeplataformasde
-apoyo como Bootstrap. Es destacable el beneficio cognitivo obtenido tras las comunes
-resolucionesdeerroresduranteelpasodeatributosyparámetrosenlosservletsyficherosjsp,y
-durante la comunicación con la base de datos, especialmente al tratar con el tipo de dato _“date”_.
-
-Podríadecirsequeloquemástiempohallevado,ignorandoproblemasexternoscomoelpobre
-rendimientodelamáquinavirtualendeterminadosequipos,hasidoelconjuntoderealizartodos
-losservletsdeformafuncionalconlosficherosjsp.Tambiénsegastóuntiemposignificanteenla
-tareadedocumentación,graciasalacualseconsiguióaprender,entreotrascosas,aexponer
-variasfilasdeinformaciónhastaunlímitemáximo,permitiendolavisualizacióntotaldedicha
-información mediante distintaspáginas comunicadasmediante botonespara acceder a las
-pestañas anteriores o posteriores a la del momento.
-
-Alfinaldetodo,noshabríagustadopoderimplementarunanuevafuncionalidadexclusivadel
-administrador,dedicadaaeliminaryañadirnuevosgruposalconjuntodeexistentes,estoparael
-casodequesurgierannuevosgénerosmusicalesyfueranecesarioincorporarlosalsistemade
-información.Encualquiercaso,alnohaberlapodidodesarrollar,sehaincorporadoalplande
-mantenimiento propuesto en la práctica anterior.
-
-
-## Bibliografía.
-
-Documentación base:
-
-- PDFs del curso de _Sistemas de Información_ de la plataforma _https://moodle.unizar.es/_
-
-Plataforma para la realización del Storyboard:
-
-- https://moqups.com/
-
-Referencias utilizadas para la comprensión e implementación de los ficheros VO y DAO, al igual
-que la configuración del PoolConnectionManager:
-
-- https://moodle.unizar.es/add/pluginfile.php/ 7072995 /mod_resource/content/ 2 /PatronDA
-    O.pdf
-
-Referencias empleadas para utilizar el campo _fecha_evento_ correctamente dentro de las consultas
-empleadas en los DAO:
-
-- https://dba.stackexchange.com/
-- https://database.guide/
-
-Uso y empleo de las clases específicas de bootstrap:
-
-_- https://getbootstrap.com/_
-
-Corrección de errores:
-
-_- https://stackoverflow.com/_
-
+Con el fin de que se puedan probar las acciones exclusivas del administrador, se facilitan unas credenciales de una cuenta administrativa:
+	Nombre de usuario: admin
+	Contraseña: admin
