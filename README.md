@@ -201,5 +201,7 @@ A la hora de iniciar sesión, basta con introducir las credenciales únicas de l
 Como en la aplicación base no existe ningún usuario normal, es necesario registrarse primero antes de poder iniciar sesión como un usuario de este tipo. Además, al no haber tampoco usuarios especiales, si se desea tener una cuenta de este tipo se deberá solicitar al administrador (en el menú desplegable de la derecha, botón “Solicitar cuenta especial”), y este último deberá concederle permisos por medio de la página dedicada “Gestionar solicitudes”.
 
 Con el fin de que se puedan probar las acciones exclusivas del administrador, se facilitan unas credenciales de una cuenta administrativa:
-	Nombre de usuario: admin
-	Contraseña: admin
+```
+Nombre de usuario: 	admin
+Contraseña: 		admin
+```
