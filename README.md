@@ -1,11 +1,6 @@
 ![Social Music Unlimited](WebContent/logo.png)
 
-# Sistemas de información
-
-# Desarrollo y construcción de una aplicación web que
-
-# cumpla los requisitos de un sistema de información
-
+# Desarrollo y construcción de una aplicación web que cumpla los requisitos de un sistema de información
 
 ## Índice
 
