@@ -23,238 +23,64 @@
 - Cronograma con tiempos de dedicación al sistema y valoración grupal
 - Bibliografía.
 
-
 ## Objetivo y alcance funcional de la aplicación.
 
 ### Objetivos
 
-Es un hecho que las probabilidades de congeniar con personas que compartan gustos musicales
-similares es más alta que cuando dichos gustos son disparejos. Ante este dato, se ha planteado
-desarrollar una aplicación web que cubra la necesidad de relacionarse con aquellas otras personas
-que compartan determinados géneros musicales. Para ayudar en el proceso, en la red social a
-desarrollar se publicarán los próximos eventos de acuerdo al género, permitiendo que nuevos
-grupos de personas se junten y se conozcan en la vida real.
+Es un hecho que las probabilidades de congeniar con personas que compartan gustos musicales similares es más alta que cuando dichos gustos son disparejos. Ante este dato, se ha planteado desarrollar una aplicación web que cubra la necesidad de relacionarse con aquellas otras personas que compartan determinados géneros musicales. Para ayudar en el proceso, en la red social a desarrollar se publicarán los próximos eventos de acuerdo al género, permitiendo que nuevos grupos de personas se junten y se conozcan en la vida real.
 
-Así, además de tener la capacidad de realizar publicaciones, se ofrecerá al usuario común los
-mensajes publicados por otras cuentas, al igual que los eventos que van a ocurrir en las próximas
-fechas con el número de personas totales que han indicado que iban a participar.
+Así, además de tener la capacidad de realizar publicaciones, se ofrecerá al usuario común los mensajes publicados por otras cuentas, al igual que los eventos que van a ocurrir en las próximas fechas con el número de personas totales que han indicado que iban a participar.
 
-La aplicación web estará organizada en distintos grupos sociales, cada uno dedicado a un género
-musical específico. De este modo, el usuario podrá seleccionar en cualquier momento los géneros
-musicales donde desea participar, al igual que elegir el grupo de entre los que pertenece a partir
-del cual visualizará publicaciones y eventos relacionados.
+La aplicación web estará organizada en distintos grupos sociales, cada uno dedicado a un género musical específico. De este modo, el usuario podrá seleccionar en cualquier momento los géneros musicales donde desea participar, al igual que elegir el grupo de entre los que pertenece a partir del cual visualizará publicaciones y eventos relacionados.
 
-La información que se va obtener de la aplicación web resultará de la interacción de los usuarios
-con la propia red social, como pueden ser las publicaciones o eventos realizados a través de esta
-en los grupos concretos.
+La información que se va obtener de la aplicación web resultará de la interacción de los usuarios con la propia red social, como pueden ser las publicaciones o eventos realizados a través de esta en los grupos concretos.
 
-Parte de dicha información recogida será gestionada en forma de datos estadísticos para su
-posterior estudio por un administrador. Entre los datos que pueden obtener los administradores
-se pueden destacar el número de participantes de cada grupo, el de usuarios registrados, o el de
-apuntados por cada evento.
+Parte de dicha información recogida será gestionada en forma de datos estadísticos para su posterior estudio por un administrador. Entre los datos que pueden obtener los administradores se pueden destacar el número de participantes de cada grupo, el de usuarios registrados, o el de apuntados por cada evento.
 
-El público objetivo al que va dirigida la aplicación web son principalmente jóvenes de entre 15 y 35
-años, los cuales disfrutan más de las actividades como conciertos y otros eventos musicales, al
-igual que tienen un control mayor de las redes sociales en general. Sin embargo, la aplicación no
-discrimina siempre que se tengan unos conocimientos mínimos sobre el uso de estas mismas.
+El público objetivo al que va dirigida la aplicación web son principalmente jóvenes de entre 15 y 35 años, los cuales disfrutan más de las actividades como conciertos y otros eventos musicales, al igual que tienen un control mayor de las redes sociales en general. Sin embargo, la aplicación no discrimina siempre que se tengan unos conocimientos mínimos sobre el uso de estas mismas.
 
-A través de todo esto se ha desarrollado un prototipo de red social funcional que gestiona los
-datos a través de un sistema de información completo.
-
+A través de todo esto se ha desarrollado un prototipo de red social funcional que gestiona los datos a través de un sistema de información completo.
 
 ### Perfiles de usuario
 
 Existen tres perfiles de usuarios distintos; el usuario normal, el usuario especial y el administrador.
 
-Elusuario normalpuedeinformarsedepróximoseventosatravésdeunpanelconcreto y
-apuntarseaellos.Encadaeventopublicadopuedeobservar,apartedelainformaciónbásica
-(fechas, lugar de celebración, etc.), el número de usuarios apuntados.
-Además,puedeleerpublicacionesdeotrosusuariosenotropanelespecializado,aligualque
-realizar sus propias publicaciones.
-Dichousuariopuedeescribircomentariostantoenlasdistintaspublicacionesexistentescomoen
-los diferentes eventos realizados
-Enadición,puededecidirenquégénerosmusicalesdeseaparticipar,aligualqueseleccionarel
-grupomusicaldeentrelosquepertenece,apartirdelcualvisualizarápublicacionesyeventos
-relacionados.
+El usuario normal puede informarse de próximos eventos a través de un panel concreto y apuntarse a ellos. En cada evento publicado puede observar, aparte de la información básica (fechas, lugar de celebración, etc.), el número de usuarios apuntados. Además, puede leer publicaciones de otros usuarios en otro panel especializado, al igual que realizar sus propias publicaciones. Dicho usuario puede escribir comentarios tanto en las distintas publicaciones existentes como en los diferentes eventos realizados. En adición, puede decidir en qué géneros musicales desea participar, al igual que seleccionar el grupo musical de entre los que pertenece, a partir del cual visualizará publicaciones y eventos relacionados.
 
-Losusuariosespecialestienenasudisposicióntodaslasaccionesquepuedenrealizarlosusuarios
-normalesconelextradequeposeenpermisosparapublicarpróximoseventosenlaplataforma.
-Se incluyen en este tipo de usuarios a autores y organizadores de prestigio.
+Los usuarios especiales tienen a su disposición todas las acciones que pueden realizar los usuarios normales con el extra de que poseen permisos para publicar próximos eventos en la plataforma. Se incluyen en este tipo de usuarios a autores y organizadores de prestigio.
 
-Enlorelativoalosadministradores,habrácomomínimo 1 porcadagrupomusicalcreado.Entre
-susfuncionespuedenpublicarotroseventosparaeldisfrutedelosusuariosnormales,yconceder
-permisos a usuarios normales de modo que se conviertan en usuarios especiales.
-Tienenasudisposicióntodoslosdatosestadísticosobtenidosdelalecturadeinformación,como
-puede ser el radio de popularidad de cada grupo, los eventos con más usuarios apuntados, etc.
-
-
-### Entidades de información
-
-Esnecesarioalmacenarytratarlainformaciónbásicadelacuentadecadausuario,entendiendo
-poréstaelnombredeusuario,lacontraseña,elcorreoelectrónicoyeltipodecuenta,demodo
-que se pueda iniciar sesión y mostrar sesiones distintas en función del tipo de usuario registrado.
-
-Juntoconcadagrupomusical,esprecisoalmacenartodoslosusuariosquepertenecenacada
-grupo.
-
-Todoslaspublicaciones,eventosocomentariosquerealicenlosusuariosesnecesariocapturarlos
-yalmacenarlosdeformaquepuedanserdevueltosalrestodecuentascuandosemetanenel
-panel concreto.
-
-Conelobjetivodesacarestadísticas,segestionanlosdatosdelsistemademodoqueseobtengan
-elnúmero de participantes decada grupo, elnúmero deusuariosregistradostotales, yel
-porcentaje de popularidad por grupo, resultado de evaluar la relación entre los últimos dos datos.
-Tambiénsepuedenobtenerloseventosdondemáspersonassehanapuntadosegúnperiodosde
-tiempodistintos(últimoañoydesdesiempre).Dichosestadísticosleapareceránaladministrador
-en distintos paneles específicos dentro de su sesión.
-
-En adición, sealmacenaránlassolicitudesdeconversióndecuentaaespecialrealizadaspor
-usuariosnormalesylosinformesdequejasescritostantoporlosusuariosnormalescomoporlos
-especiales, permitiendo al administrador observar y tratar dichos datos.
-
+En lo relativo a los administradores, habrá como mínimo 1 por cada grupo musical creado. Entre sus funciones pueden publicar otros eventos para el disfrute de los usuarios normales, y conceder permisos a usuarios normales de modo que se conviertan en usuarios especiales.
+Tienen a su disposición todos los datos estadísticos obtenidos de la lectura de información, como puede ser el radio de popularidad de cada grupo, los eventos con más usuarios apuntados, etc.
 
 ### Funcionalidades del sistema
 
-- Elsistemadebepermitiratodoslostiposdeusuariosregistradosiniciarsesiónmediante
-    credenciales únicas.
-- Elsistemadebepermitirlacreacióndecuentasdetiponormalmedianteunregistrode
-    usuario, de modo que se almacenen el nombre de usuario, la contraseña, el correo
-    electrónico del usuario y los grupos musicales a los que pertenecerá el nuevo usuario.
-       - Elnuevonombredeusuariointroducidoduranteelregistrotienequeserúnico,esdecir,
-          no puede existir otra cuenta asociada al mismo nombre de usuario.
-       - Elnuevocorreoelectrónicointroducidoduranteelregistrotienequeserúnico,esdecir,
-          no puede existir otra cuenta asociada al mismo correo electrónico.
-- El sistema debepermitir a los usuarios normales yespecialesseleccionarlosgéneros
-    musicalesenlosqueparticipar,demodoqueloscapture,almaceneygestioneresultandoen
-    los grupos musicales donde dicho usuario pertenecerá.
-       - Elsistemanodebepermitirqueunusuarionormaloespecialnopertenezcaaningún
-          grupo musical.
-- Elsistemadebepermitiralosusuariosnormalesyespecialesseleccionarungrupomusicalde
-    entreaquellosalosquepertenece,siendoesteelgénerodelquemostraránpublicacionesy
-    eventos.
-- Elsistemadebecapturarlaspublicacionesrealizadasporlosusuariosnormalesyespeciales
-    engruposmusicalesconcretos,almacenarlas,ydevolverlasparamostrarlasenelpanelde
-    publicaciones correspondiente.
-- Elsistemadebecapturarloseventosrealizadosporlosadministradoresyusuariosespeciales
-    engruposmusicalesconcretos,almacenarlos,ydevolverlosparamostrarlosenelpanelde
-    eventos correspondiente.
-- Elsistemadebecapturarloscomentariosrealizadosporlosusuariosnormalesyespecialesen
-    publicacionesyeventosconcretos,almacenarlos,ydevolverlosparamostrarlosenelpanel
-    de comentarios correspondiente.
-- Elsistemadebealmacenar elnúmero deusuariosquesehan apuntadoenunevento
-    concreto, y mostrarlo en el evento correspondiente.
+- El sistema debe permitir a todos los tipos de usuarios registrados iniciar sesión mediante credenciales únicas.
+- El sistema debe permitir la creación de cuentas de tipo normal mediante un registro de usuario, de modo que se almacenen el nombre de usuario, la contraseña, el correo electrónico del usuario y los grupos musicales a los que pertenecerá el nuevo usuario.
+   - El nuevo nombre de usuario introducido durante el registro tiene que ser único, es decir, no puede existir otra cuenta asociada al mismo nombre de usuario.
+   - El nuevo correo electrónico introducido durante el registro tiene que ser único, es decir, no puede existir otra cuenta asociada al mismo correo electrónico.
+
+- El sistema debe permitir a los usuarios normales y especiales seleccionar los géneros musicales en los que participar, de modo que los capture, almacene y gestione resultando en los grupos musicales donde dicho usuario pertenecerá.
+   - El sistema no debe permitir que un usuario normal o especial no pertenezca a ningún grupo musical.
+- El sistema debe permitir a los usuarios normales y especiales seleccionar un grupo musical de entre aquellos a los que pertenece, siendo este el género del que mostrarán publicaciones y eventos.
+
+- El sistema debe capturar las publicaciones realizadas por los usuarios normales y especiales en grupos musicales concretos, almacenarlas, y devolverlas para mostrarlas en el panel de publicaciones correspondiente.
+- El sistema debe capturar los eventos realizados por los administradores y usuarios especiales en grupos musicales concretos, almacenarlos, y devolverlos para mostrarlos en el panel de eventos correspondiente.
+- El sistema debe capturar los comentarios realizados por los usuarios normales y especiales en publicaciones y eventos concretos, almacenarlos, y devolverlos para mostrarlos en el panel de comentarios correspondiente.
+- El sistema debe almacenar el número de usuarios que se han apuntado en un evento concreto, y mostrarlo en el evento correspondiente.
 - El sistema debe almacenar, para cada evento, cada usuario que se ha apuntado.
-- El sistema debe permitir a los usuarios normales y especiales ordenar los eventos
-    cronológicamente o por número de apuntados.
-- Elsistemadebemostraraladministradorlasestadísticasobtenidasdelaevaluacióndelas
-    interacciones de los usuarios.
-       - Elsistemamostraráaladministradorelnúmerodeusuariospertenecientesacadagrupo,
-          junto con el número de usuarios totales registrados.
-       - El sistema mostrará al administrador el número de apuntados de cada evento.
-       - Elsistemamostraráaladministradoreleventoconmásusuariosapuntados,tantoenel
-          último año como desde siempre.
-- El sistema debe permitir a los administradores ordenar las estadísticas de eventos
-    cronológicamente o por número de apuntados.
+- El sistema debe permitir a los usuarios normales y especiales ordenar los eventos cronológicamente o por número de apuntados.
 
+- El sistema debe mostrar al administrador las estadísticas obtenidas de la evaluación de las interacciones de los usuarios.
+   - El sistema mostrará al administrador el número de usuarios pertenecientes a cada grupo, junto con el número de usuarios totales registrados.
+   - El sistema mostrará al administrador el número de apuntados de cada evento.
+   - El sistema mostrará al administrador el evento con más usuarios apuntados, tanto en el último año como desde siempre.
+- El sistema debe permitir a los administradores ordenar las estadísticas de eventos cronológicamente o por número de apuntados.
 
-- Elsistemadebepermitiralosusuariosnormalessolicitarelcambiodecuentaausuario
-    especial, de modo que la información de la solicitud se gestione y se devuelve al
-    administrador.
-- Elsistemadebepermitiraladministradorconcederonegarpermisosdeusuarioespecialalos
-    usuarios normales cuando se requiera.
-- Elsistemadebepermitiraladministradorquitarpermisosdeusuarioespecialalosusuarios
-    especiales cuando se requiera, de modo que se conviertan en cuentas normales.
-- Elsistemadebepermitiralosusuariosnormalesyespecialesenviarinformessobrequejaso
-    propuestas, de modo que la información del informe se gestione y se devuelva al
-    administrador.
-- Elsistemadebepermitir aladministrador descartar losinformesrecibidosqueyahaya
-    gestionado, eliminandolos del sistema.
-
-
-## Planteamiento del sistema y storyboard de la aplicación.
-
-### Modelo de negocio
-
-Puestoqueeldesarrollodelaaplicaciónwebquesehaplanteadosebasaenunaredsocial,en
-una primera instancia surgieron tres opciones a evaluar.
-
-Laprimera constaba dehacer quelosusuariosespeciales,quetienenelprivilegiodepoder
-publicar eventos, tuviesen querealizar un pago único para conseguir dichospermisos.Sin
-embargo, después de analizarlo fríamente se llegó a la conclusión de que esto era
-contraproducenteyaquenormalmentenoleshacefaltapagarparapromocionarsuspropios
-eventos,puestoqueyatienencuentasgratuitasenotrasredessocialescomopuedeserInstagram
-dondesubenlainformacióndesuseventoscomopublicacionesnormales,demodoquelos
-usuariosinteresadosseenterandetodasformas.Unabasedenuestromodeloesfacilitarla
-consultadeestoseventos,yelhechodequelasempresasnoseunanporquedebanpagar
-contradice esta idea de facilitación.
-
-Despuésdedesechar laprimera opción, seprocedióaevaluarotrasopciones.Unadeellas
-consistíaenponeranunciosrelacionadosconelgénerodelgrupoaloslateralesdelaaplicación
-web.Estaalternativaestuvomuybienvistayaquelosmárgeneslateralesseencontrabanvacíos
-enlosbocetosdela interfazdelosquesedisponía, acausadequetodoelcuerpodela
-informaciónseencontrasecentrado.Además,comodichosanunciosestabanrelacionadoscon
-los gustos de los usuarios, no interfería de forma molesta con la actividad de los usuarios.
-
-Porúltimo,surgiólaideadevenderlasestadísticasnuméricasdeloseventosdelasempresas
-organizadorascorrespondientes,demodoqueellasmismaspudieranutilizarlasparaconocerqué
-eventoshabíantenidomáséxitoohabíanllamadomáslaatenciónentrelosusuarios,obteniendo
-información muy útil para la elaboración de próximos eventos.
-
-Contodasestasopcionesrecogidas,finalmentesehadecididoquesellevaránacabolasúltimas
-dosopcionespropuestas,ofreciendocomoconsecuenciaunmodelodondeaparecenanuncios
-afinesalosgustosdelosusuariosenlosmárgenesdesocupadosdelasdistintaspáginas,ydonde
-sevendelainformaciónestadísticaobtenidadelosdistintosvaloresnuméricosrecogidosporel
-sistemadeinformaciónalasempresasorganizadorasinteresadasconfinescomerciales(elaborar
-nuevos eventos con mayor tasa de éxito y, por ende, con mayores ganancias).
-
-
-### Storyboard / Mapa de navegación
-
-Conelpropósitodeconseguirunamayorlegibilidad,sehanseparado 4 submapasdiferentesque
-enconjuntocomponenunmapadenavegacióncompleto.Unoesparalaspantallasdeiniciode
-sesiónderegistro,ylosotrostresparalasinterfacesdecadatipodeusuario(normal,especialy
-administrador).
-
-Además,conelfindefavorecerla comprensióndelosmapassinsaturarlosdecapturasrepetidas,
-enlosusuariosquedisponendebotonessimilaresquellevanaaccionesigualmentesemejantes,
-solo se ha puesto la captura de la página correspondiente a dicha operación en uno de ellos.
-
-Enadición,sehanomitidolasflechasquesurgendelascrucessituadasenlasesquinassuperior
-derechadelospop-upsdemodoqueseeviteunasobrecargadeflechas,promoviendoigualque
-anteriormenteunamejorcomprensión.Lafunciónquerealizanestascrucesescerrarelpop-up
-volviendo a la ventana que ha iniciado la aparición de dicho pop-up.
-
-Comolaformaenqueseexpresanloserroresprincipalesesmostrandounacadenadetextoenla
-zona donde ha ocurridodichoproblema, siendoqueelrestodela páginaesigualquela
-predecesoraysiguesiendofuncional,sehaoptadopormostrar lascapturasconlosposibles
-erroresmedianteflechasdiscontinuasydejandolascapturassinflechasdeoperaciones,demodo
-queseentienda queesla mismapáginaconlasmismasfuncionalidadesperoconlaúnica
-excepción de la aparición de un aviso de error.
-
-Dependiendodelascredencialesqueseinsertenenloscamposdeiniciodesesión,laventana
-queaparecerácorresponderáalainterfazrelativadeltipodeusuarioiniciado.Asíesquesise
-introducenunascredencialesdeadministrador,sedirigiráalaventanapredeterminadaparael
-tipo de usuario administrador, siendo los mismos casos para usuarios normales y especiales.
-
-Elusuarioespecialdisponedelosmismospanelesparapublicacionesyeventos,conlaexcepción
-dequeeneldeeventosapareceunanuevaopciónpara“Publicareventos”.Laotradiferencia
-apreciableesqueenelmenúdesplegablenoapareceelbotón“Solicitarespecial”,puestoqueel
-usuario ya dispone de una cuenta con permisos especiales.
-
-Los distintos submapas son:
-
-
-- Inicio de sesión y registro
-
-
-- Usuario normal
-
-
-- Usuario especial
-
-
-- Administrador
-
+- El sistema debe permitir a los usuarios normales solicitar el cambio de cuenta a usuario especial, de modo que la información de la solicitud se gestione y se devuelve al administrador.
+- El sistema debe permitir al administrador conceder o negar permisos de usuario especial a los usuarios normales cuando se requiera.
+- El sistema debe permitir al administrador quitar permisos de usuario especial a los usuarios especiales cuando se requiera, de modo que se conviertan en cuentas normales.
+- El sistema debe permitir a los usuarios normales y especiales enviar informes sobre quejas o propuestas, de modo que la información del informe se gestione y se devuelva al administrador.
+- El sistema debe permitir al administrador descartar los informes recibidos que ya haya gestionado, eliminandolos del sistema.
 
 ## Modelo de datos del sistema.
 
